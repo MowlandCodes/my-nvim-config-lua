@@ -90,8 +90,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ---
 
 > _Happy Coding!_ ✨
-```
-
----
-
-This Markdown structure gives a polished look to your README with symbols, icons, and tips that make it visually appealing and easy to navigate. Feel free to adjust the plugin names, shortcuts, or sections to match your specific configuration!
