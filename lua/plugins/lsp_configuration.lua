@@ -12,7 +12,7 @@ return {
 				},
                 PATH = "prepend",
 			})
-			vim.keymap.set("n", "<leader>ms", ":Mason<CR>", {})
+			vim.keymap.set("n", "<leader>ms", ":Mason<CR>", { silent = true })
 		end,
 	},
 	{
@@ -44,10 +44,10 @@ return {
             })
 
 			-- Keymapping for Tooltip Docs
-			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, {})
-			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { silent = true })
+			vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { silent = true})
+			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { silent = true })
+			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { silent = true })
 		end,
 	},
 }
