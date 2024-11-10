@@ -36,11 +36,15 @@ return {
             })
 			lspconfig.ast_grep.setup({
                 capabilities = capabilities,
-                cmd = { bin_path .. "ast-grep.cmd" },
+                cmd = { bin_path .. "ast-grep.cmd", bin_path .. "sg.cmd" },
             })
 			lspconfig.jedi_language_server.setup({
                 capabilities = capabilities,
                 cmd = { bin_path .. "jedi-language-server.cmd" },
+            })
+			lspconfig.clangd.setup({
+                capabilities = capabilities,
+                cmd = { bin_path .. "clangd.cmd" },
             })
 
 			-- Keymapping for Tooltip Docs

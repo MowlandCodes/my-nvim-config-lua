@@ -10,6 +10,7 @@ return {
                 null_ls.builtins.code_actions.textlint,
                 null_ls.builtins.formatting.markdownlint,
                 null_ls.builtins.formatting.prettier,
+                null_ls.builtins.formatting.clang_format,
 			},
 		})
 
