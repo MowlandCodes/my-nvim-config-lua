@@ -42,6 +42,10 @@ return {
                 capabilities = capabilities,
                 cmd = { bin_path .. "jedi-language-server.cmd" },
             })
+			lspconfig.ltex.setup({
+                capabilities = capabilities,
+                cmd = { bin_path .. "ltex-ls.cmd", bin_path .. "ltex-cli.cmd" },
+            })
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, {})
