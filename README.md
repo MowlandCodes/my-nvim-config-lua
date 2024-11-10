@@ -20,7 +20,7 @@ Welcome to my Neovim configuration! This setup is tailored for power and perform
 Clone this repository and set up Neovim with a few simple steps:
 
 ```bash
-git clone https://github.com/yourusername/yourrepo.git ~/.config/nvim
+git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
 ```
 
 ### Requirements
@@ -35,11 +35,11 @@ git clone https://github.com/yourusername/yourrepo.git ~/.config/nvim
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/yourusername/yourrepo.git ~/.config/nvim
+        git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
    ```
 
 2. **Enjoy Coding**  
-   Open any file and start coding with a highly optimized environment!
+Open any file and start coding with a highly optimized environment!
 
 ---
 
