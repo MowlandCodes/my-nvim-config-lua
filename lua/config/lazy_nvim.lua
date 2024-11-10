@@ -34,5 +34,5 @@ require("lazy").setup({
     checker = { enabled = true },
 })
 
-vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', {})
+vim.keymap.set('n', '<leader>lz', ':Lazy<CR>', { silent = true })
 ------------------------------------------------------------------------------------------------------------------
