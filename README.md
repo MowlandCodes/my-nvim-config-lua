@@ -35,7 +35,7 @@ git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
 
 1. **Clone the Repository**  
    ```bash
-        git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
+    git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
    ```
 
 2. **Enjoy Coding**  
