@@ -10,6 +10,6 @@ return {
         },
 
         -- Neo-Tree Keybindings
-        vim.keymap.set('n', '<F2>', ':Neotree filesystem reveal right<Enter>', { desc = "Neo-Tree Reveal", silent = true })
+        vim.keymap.set('n', '<F2>', ':Neotree filesystem reveal left<Enter>', { desc = "Neo-Tree Reveal", silent = true })
     },
 }

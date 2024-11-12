@@ -7,7 +7,7 @@ return {
 			"jonarrien/telescope-cmdline.nvim",
 		},
 		config = function()
-            vim.keymap.set("n", "<leader><leader>", ":Telescope cmdline<CR>", { silent = true })
+            vim.keymap.set("n", ":", ":Telescope cmdline<CR>", { silent = true, noremap = true })
 			-- Using Telescope Package
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope - Find Files" })
