@@ -10,8 +10,8 @@ return {
         local map = vim.api.nvim_set_keymap
         local opts = { noremap = true, silent = true }
         map('n', '<C-T>', ":tabnew<Enter>", opts)
-        map('n', '<C-Left>', ":BufferPrevious<Enter>", opts)
-        map('n', '<C-Right>', ":BufferNext<Enter>", opts)
+        map('n', '<leader><Left>', ":BufferPrevious<Enter>", opts)
+        map('n', '<leader><Right>', ":BufferNext<Enter>", opts)
         map('n', '<A-<>', ":BufferMovePrevious<Enter>", opts)
         map('n', '<A->>', ":BufferMoveNext<Enter>", opts)
         map('n', '<A-1>', ":BufferGoto 1<Enter>", opts)
