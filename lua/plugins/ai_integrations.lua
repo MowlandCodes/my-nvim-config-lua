@@ -9,7 +9,7 @@ return {
             require("codeium").setup({})
 
             -- Spawning Codeium Chat in Browser (using formatted string)
-            vim.api.nvim_buf_set_keymap(0, "n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true })
+            vim.api.nvim_buf_set_keymap(0, "n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
         end,
     },
     {
@@ -31,8 +31,8 @@ return {
                 no_auto_close = true,
             })
 
-            vim.keymap.set({ "n", "v" }, '<leader>al', ":Gen<CR>")
-            vim.keymap.set({ "n", "v" }, '<leader>ac', ":Gen Chat<CR>")
+            vim.keymap.set({ "n", "v" }, '<leader>al', ":Gen<CR>", { silent = true, desc = "Ollama Panel" })
+            vim.keymap.set({ "n", "v" }, '<leader>ac', ":Gen Chat<CR>", { silent = true, desc = "Ollama Chat"})
 
         end,
     },

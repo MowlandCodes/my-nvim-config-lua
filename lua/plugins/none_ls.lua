@@ -14,6 +14,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Auto Formatting" })
 	end,
 }
