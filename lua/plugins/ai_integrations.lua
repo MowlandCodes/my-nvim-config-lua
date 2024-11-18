@@ -9,7 +9,7 @@ return {
             require("codeium").setup({})
 
             -- Spawning Codeium Chat in Browser (using formatted string)
-            vim.api.nvim_buf_set_keymap(0, "n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
+            vim.keymap.set("n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
         end,
     },
     {
