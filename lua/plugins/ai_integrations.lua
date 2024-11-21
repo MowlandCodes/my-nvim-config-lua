@@ -6,7 +6,12 @@ return {
             "hrsh7th/nvim-cmp",
         },
         config = function()
-            require("codeium").setup({})
+            require("codeium").setup({
+                enable_chat = true,
+                virtual_text = {
+                    enabled = true,
+                },
+            })
 
             -- Spawning Codeium Chat in Browser (using formatted string)
             vim.keymap.set("n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
@@ -30,10 +35,8 @@ return {
                 display_mode = "float",
                 no_auto_close = true,
             })
-
-            vim.keymap.set({ "n", "v" }, '<leader>al', ":Gen<CR>", { silent = true, desc = "Ollama Panel" })
-            vim.keymap.set({ "n", "v" }, '<leader>ac', ":Gen Chat<CR>", { silent = true, desc = "Ollama Chat"})
-
+            vim.keymap.set({ "n", "v" }, "<leader>al", ":Gen<CR>", { silent = true, desc = "Ollama Panel" })
+            vim.keymap.set({ "n", "v" }, "<leader>ac", ":Gen Chat<CR>", { silent = true, desc = "Ollama Chat" })
         end,
     },
 }
