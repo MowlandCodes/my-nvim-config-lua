@@ -51,7 +51,7 @@ return {
 				},
                 mru = {
                     enable = true,
-                    limit = 7,
+                    limit = 10,
                 }
 			},
 		})
