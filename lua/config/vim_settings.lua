@@ -8,5 +8,3 @@ vim.cmd("set mouse=a")
 vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
 vim.cmd("set clipboard=unnamedplus")
-
-

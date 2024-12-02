@@ -1,13 +1,12 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+        tag = "0.1.8",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"jonarrien/telescope-cmdline.nvim",
+            "BurntSushi/ripgrep",
 		},
 		config = function()
-            vim.keymap.set("n", ":", ":Telescope cmdline<CR>", { silent = true, noremap = true })
 			-- Using Telescope Package
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope - Find Files" })
@@ -22,15 +21,7 @@ return {
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
-					},
-					["cmdline"] = {
-						picker = {
-							layout_config = {
-								width = 120,
-								height = 25,
-							},
-						},
-					},
+				},
 					mappings = {
 						complete = "<Tab>",
 						run_selection = "<C-CR>",
@@ -42,7 +33,6 @@ return {
 				},
 			})
 			require("telescope").load_extension("ui-select")
-			require("telescope").load_extension("cmdline")
 		end,
 	},
 }
