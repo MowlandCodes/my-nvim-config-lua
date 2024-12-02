@@ -8,7 +8,7 @@ return {
             highlight = { enable = true },
             indent = {
                 enable = true,
-                disable = { "lua" },
+                disable = { "lua" }, -- Only for Neovim version under 0.10.x
             },
         })
     end
