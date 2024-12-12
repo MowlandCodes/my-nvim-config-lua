@@ -46,6 +46,10 @@ return {
                 capabilities = capabilities,
                 cmd = { bin_path .. "clangd.cmd" },
             })
+			lspconfig.html.setup({
+                capabilities = capabilities,
+                cmd = { bin_path .. "vscode-html-language-server.cmd" },
+            })
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { silent = true, desc = "LSP Hover Tooltip" })
