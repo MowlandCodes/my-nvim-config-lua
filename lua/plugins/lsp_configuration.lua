@@ -41,6 +41,9 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { silent = true, desc = "LSP Hover Tooltip" })
