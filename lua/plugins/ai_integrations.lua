@@ -10,10 +10,10 @@ return {
                 enable_chat = true,
                 workspace_root = {
                     use_lsp = true,
-                    find_root = function ()
+                    find_root = function()
                         return vim.fn.getcwd()
-                    end
-                }
+                    end,
+                },
             })
 
             -- Spawning Codeium Chat in Browser (using formatted string)
@@ -21,25 +21,40 @@ return {
         end,
     },
     {
-        "David-Kunz/gen.nvim",
+        "olimorris/codecompanion.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
         config = function()
-            -- Import the gen plugin
-            local gen = require("gen")
+            local codecompanion = require("codecompanion")
 
-            -- Configure the gen plugin
-            gen.setup({
-                -- Display the model when it is being used
-                show_model = true,
-
-                -- Display the prompt when it is being used
-                show_prompt = true,
-
-                -- Display the generated code in a split window
-                display_mode = "float",
-                no_auto_close = true,
+            codecompanion.setup({
+                strategies = {
+                    chat = {
+                        adapter = "ollama",
+                    },
+                    inline = {
+                        adapter = "ollama",
+                    },
+                },
             })
-            vim.keymap.set({ "n", "v" }, "<leader>al", ":Gen<CR>", { silent = true, desc = "Ollama Panel" })
-            vim.keymap.set({ "n", "v" }, "<leader>ac", ":Gen Chat<CR>", { silent = true, desc = "Ollama Chat" })
+            -- Added Keymaps
+            vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap(
+                "n",
+                "<leader>ac",
+                "<cmd>CodeCompanionChat Toggle<cr>",
+                { noremap = true, silent = true }
+            )
+            vim.api.nvim_set_keymap(
+                "v",
+                "<leader>ac",
+                "<cmd>CodeCompanionChat Toggle<cr>",
+                { noremap = true, silent = true }
+            )
+            vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
         end,
     },
 }
