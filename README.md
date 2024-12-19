@@ -25,7 +25,7 @@ git clone https://github.com/MowlandCodes/my-nvim-config-lua.git ~/.config/nvim
 
 ### Requirements
 
-- **Neovim** 0.5+
+- **Neovim** 0.9+
 - **Git**
 - **Lua** (for running configuration scripts)
 
