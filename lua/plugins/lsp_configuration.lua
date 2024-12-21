@@ -50,6 +50,10 @@ return {
                 capabilities = capabilities,
                 cmd = { bin_path .. "vscode-html-language-server.cmd" },
             })
+            lspconfig.jinja_lsp.setup({
+                capabilities = capabilities,
+                cmd = { bin_path .. "jinja-lsp.cmd" },
+            })
 
             -- Keymapping for Tooltip Docs
             vim.keymap.set("n", "<leader>lh", function ()
