@@ -44,9 +44,15 @@ return {
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.djlsp.setup({
+				capabilities = capabilities,
+			})
 
 			-- Keymapping for Tooltip Docs
-			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { silent = true, desc = "LSP Hover Tooltip" })
+			vim.keymap.set("n", "<leader>lh", function()
+                vim.lsp.buf.hover()
+                vim.lsp.buf.hover()
+            end, { silent = true, desc = "LSP Hover Tooltip" })
 			vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { silent = true, desc = "LSP Code Action" })
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { silent = true, desc = "LSP Code Reference" })
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, { silent = true, desc = "LSP Code Definition" })
