@@ -28,10 +28,19 @@ return {
                 persist_buffer_sort = true,
                 enforce_regular_tabs = true,
                 always_show_bufferline = true,
-                themable = true
+                themable = true,
+                pick = {
+                    alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                }
             },
             vim.keymap.set("n", "<leader><Right>", ":BufferLineCycleNext<CR>", { silent = true, desc = "Next Tab Buffer"}),
-            vim.keymap.set("n", "<leader><Left>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous Tab Buffer"})
+            vim.keymap.set("n", "<leader><Left>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous Tab Buffer"}),
+            vim.keymap.set("n", "<leader>t", ":BufferLinePick<CR>", { silent = true, desc = "Pick a Tab"}),
+            vim.keymap.set("n", "<A-c>", function ()
+                local current = vim.api.nvim_get_current_buf()
+                vim.api.nvim_command("BufferLineCycleNext")
+                vim.api.nvim_command("bdelete " .. current)
+            end, { silent = true, desc = "Close current tab"})
         })
     end,
 }
