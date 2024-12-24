@@ -12,5 +12,8 @@ return {
             max_width = 80,
         })
         vim.notify = require("notify")
+        vim.opt.showcmd = false
+        vim.opt.cmdheight = 0
+        vim.opt.laststatus = 2
     end
 }

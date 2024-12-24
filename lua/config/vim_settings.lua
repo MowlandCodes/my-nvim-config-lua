@@ -9,3 +9,5 @@ vim.cmd("set nohlsearch")
 vim.cmd("set expandtab")
 vim.cmd("set clipboard=unnamedplus")
 vim.o.statusline = "%f"
+vim.opt.smartindent = true
+
