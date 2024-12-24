@@ -38,7 +38,7 @@ return {
             vim.keymap.set("n", "<leader>t", ":BufferLinePick<CR>", { silent = true, desc = "Pick a Tab"}),
             vim.keymap.set("n", "<A-c>", function ()
                 local current = vim.api.nvim_get_current_buf()
-                vim.api.nvim_command("BufferLineCycleNext")
+                vim.api.nvim_command("BufferLineCyclePrev")
                 vim.api.nvim_command("bdelete " .. current)
             end, { silent = true, desc = "Close current tab"})
         })
