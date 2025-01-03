@@ -53,6 +53,9 @@ return {
 			lspconfig.biome.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.ltex.setup({
+				capabilities = capabilities,
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
