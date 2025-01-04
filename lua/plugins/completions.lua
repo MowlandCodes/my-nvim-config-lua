@@ -40,6 +40,9 @@ return {
 					{ name = "buffer" },
 				}),
 			})
+
+            require("luasnip").filetype_extend("htmldjango", { "html" })
+
 		end,
 	},
 }

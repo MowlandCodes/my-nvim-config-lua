@@ -42,9 +42,11 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
+                filetypes = { "html", "htmldjango" },
 				capabilities = capabilities,
 			})
 			lspconfig.djlsp.setup({
+                cmd = { "/home/mowlandcodes/.local/bin/djlsp" },
 				capabilities = capabilities,
 			})
 			lspconfig.bashls.setup({
