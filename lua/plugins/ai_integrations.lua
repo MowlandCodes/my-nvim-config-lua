@@ -1,45 +1,60 @@
 return {
-    {
-        "Exafunction/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        config = function()
-            require("codeium").setup({
-                enable_chat = true,
-                workspace_root = {
-                    use_lsp = true,
-                    find_root = function ()
-                        return vim.fn.getcwd()
-                    end
-                }
-            })
+	{
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({
+				enable_chat = true,
+				workspace_root = {
+					use_lsp = true,
+					find_root = function()
+						return vim.fn.getcwd()
+					end,
+				},
+			})
 
-            -- Spawning Codeium Chat in Browser (using formatted string)
-            vim.keymap.set("n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
-        end,
-    },
-    {
-        "David-Kunz/gen.nvim",
-        config = function()
-            -- Import the gen plugin
-            local gen = require("gen")
+			-- Spawning Codeium Chat in Browser (using formatted string)
+			vim.keymap.set("n", "<Leader>aa", ":Codeium Chat<CR>", { silent = true, desc = "Codeium Chat" })
+		end,
+	},
+	{
+		"olimorris/codecompanion.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			local codecompanion = require("codecompanion")
 
-            -- Configure the gen plugin
-            gen.setup({
-                -- Display the model when it is being used
-                show_model = true,
-
-                -- Display the prompt when it is being used
-                show_prompt = true,
-
-                -- Display the generated code in a split window
-                display_mode = "float",
-                no_auto_close = true,
-            })
-            vim.keymap.set({ "n", "v" }, "<leader>al", ":Gen<CR>", { silent = true, desc = "Ollama Panel" })
-            vim.keymap.set({ "n", "v" }, "<leader>ac", ":Gen Chat<CR>", { silent = true, desc = "Ollama Chat" })
-        end,
-    },
+			codecompanion.setup({
+				strategies = {
+					chat = {
+						adapter = "ollama",
+					},
+					inline = {
+						adapter = "ollama",
+					},
+				},
+			})
+			-- Added Keymaps
+			vim.api.nvim_set_keymap("n", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true, desc = "Code Companion Actions" })
+			vim.api.nvim_set_keymap("v", "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true, desc = "Code Companion Actions" })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>ac",
+				"<cmd>CodeCompanionChat Toggle<cr>",
+				{ noremap = true, silent = true, desc = "Toggle Code Companion Chat" }
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<leader>ac",
+				"<cmd>CodeCompanionChat Toggle<cr>",
+				{ noremap = true, silent = true, desc = "Toggle Code Companion Chat" }
+			)
+			vim.api.nvim_set_keymap("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true, desc = "Add Code Companion" })
+		end,
+	},
 }
