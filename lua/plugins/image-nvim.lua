@@ -5,7 +5,7 @@ return {
     config = function ()
         local image = require("image")
         image.setup({
-            backend = "kitty",
+            backend = "ueberzug",
             processor = "magick_cli",
         })
     end
