@@ -30,6 +30,22 @@ return {
 			local codecompanion = require("codecompanion")
 
 			codecompanion.setup({
+                codellama = function ()
+                    return require("codecompanion.adapters").extend("ollama", {
+                        name = "codellama",
+                        schema = {
+                            model = {
+                                default = "codellama:latest",
+                            },
+                            num_ctx = {
+                                default = 24000,
+                            },
+                            num_predict = {
+                                default = -1
+                            }
+                        }
+                    })
+                end,
 				strategies = {
 					chat = {
 						adapter = "ollama",
