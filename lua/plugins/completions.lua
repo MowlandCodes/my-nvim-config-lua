@@ -43,6 +43,7 @@ return {
 			})
 
             require("luasnip").filetype_extend("htmldjango", { "html" })
+            require("luasnip").filetype_extend("php", { "html" })
 
 		end,
 	},
