@@ -11,7 +11,9 @@ return {
                 null_ls.builtins.formatting.markdownlint,
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.formatting.clang_format,
+                null_ls.builtins.formatting.pretty_php,
                 null_ls.builtins.diagnostics.djlint,
+                null_ls.builtins.diagnostics.phpcs,
 			},
 		})
 
