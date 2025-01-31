@@ -14,3 +14,5 @@ vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon
                     "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250," ..
                     "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250," ..
                     "o:hor50"
+
+vim.opt.wrap = false
