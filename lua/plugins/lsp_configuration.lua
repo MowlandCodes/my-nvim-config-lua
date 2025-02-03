@@ -64,6 +64,17 @@ return {
 			lspconfig.phpactor.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.emmet_language_server.setup({
+				capabilities = capabilities,
+                filetypes = {
+                    "html",
+                    "css",
+                    "javascript",
+                    "typescript",
+                    "php",
+                    "htmldjango"
+                },
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
