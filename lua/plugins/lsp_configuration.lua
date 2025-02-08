@@ -75,6 +75,15 @@ return {
                     "htmldjango"
                 },
 			})
+			lspconfig.stimulus_ls.setup({
+				capabilities = capabilities,
+                filetypes = {
+                    "html",
+                    "php",
+                    "blade",
+                },
+                cmd = { "stimulus-language-server", "--stdio" }
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
