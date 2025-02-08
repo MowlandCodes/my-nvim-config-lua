@@ -120,15 +120,6 @@ return {
                     "htmldjango",
                 },
             })
-            lspconfig.stimulus_ls.setup({
-                capabilities = capabilities,
-                filetypes = {
-                    "html",
-                    "php",
-                    "blade",
-                },
-                cmd = { "stimulus-language-server", "--stdio" },
-            })
             lspconfig.intelephense.setup( {
                 capabilities = capabilities,
             } )
