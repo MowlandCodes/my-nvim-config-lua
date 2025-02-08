@@ -15,9 +15,12 @@ return {
                 null_ls.builtins.diagnostics.djlint,
                 null_ls.builtins.diagnostics.phpcs,
                 null_ls.builtins.formatting.blade_formatter,
+                null_ls.builtins.formatting.prettierd,
+                null_ls.builtins.diagnostics.phpstan,
+                null_ls.builtins.formatting.pint,
 			},
 		})
 
-		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Auto Formatting" })
+		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Auto Formatting", silent = true })
 	end,
 }
