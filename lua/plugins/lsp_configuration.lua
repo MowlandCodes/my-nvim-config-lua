@@ -120,7 +120,7 @@ return {
                     "htmldjango",
                 },
             })
-            lspconfig.intelephense.setup( {
+            lspconfig.tailwindcss.setup( {
                 capabilities = capabilities,
             } )
 
