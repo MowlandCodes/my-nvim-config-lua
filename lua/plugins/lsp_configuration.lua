@@ -118,6 +118,7 @@ return {
                     "typescript",
                     "php",
                     "htmldjango",
+                    "blade",
                 },
             })
             lspconfig.tailwindcss.setup( {
