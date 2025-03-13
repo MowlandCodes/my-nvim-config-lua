@@ -121,6 +121,14 @@ return {
 			})
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
+				filetypes = {
+					"html",
+					"javascript",
+					"typescript",
+					"php",
+					"blade",
+					"htmldjango",
+				},
 			})
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
