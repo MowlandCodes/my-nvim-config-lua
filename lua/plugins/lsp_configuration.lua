@@ -25,7 +25,6 @@ return {
 					"clangd",
 					"cssls",
 					"html",
-					"phpactor",
 					"emmet_language_server",
 					"tailwindcss",
 					"bashls",
@@ -34,7 +33,6 @@ return {
 					"pyright",
 					"stimulus_ls",
 					"intelephense",
-					"phpactor",
 				},
 				automatic_installation = true,
 			})

@@ -10,9 +10,10 @@ vim.cmd("set expandtab")
 vim.cmd("set clipboard=unnamedplus")
 vim.o.statusline = "%f"
 vim.opt.smartindent = true
-vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250," ..
-                    "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250," ..
-                    "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250," ..
-                    "o:hor50"
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
+	.. "i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
+	.. "r-cr:hor20-Cursor/lCursor-blinkwait700-blinkoff400-blinkon250,"
+	.. "o:hor50"
 
 vim.opt.wrap = true
+vim.g.lazyvim_php_lsp = "intelephense"
