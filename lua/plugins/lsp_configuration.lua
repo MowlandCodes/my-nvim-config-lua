@@ -127,6 +127,9 @@ return {
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.asm_lsp.setup({
+				capabilities = capabilities,
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
