@@ -1,10 +1,14 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
+		tag = "0.1.8",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-            "BurntSushi/ripgrep",
+			"BurntSushi/ripgrep",
+			"jonarrien/telescope-cmdline.nvim",
+		},
+		keys = {
+			{ ":", "<cmd>Telescope cmdline<cr>", desc = "Command Line", mode = "n" },
 		},
 		config = function()
 			-- Using Telescope Package
@@ -21,18 +25,27 @@ return {
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown({}),
-				},
-					mappings = {
-						complete = "<Tab>",
-						run_selection = "<C-CR>",
-						run_input = "<CR>",
 					},
-					overseer = {
-						enabled = true,
+					cmdline = {
+						picker = {
+							layout_config = {
+								width = 120,
+								height = 25,
+							},
+						},
+						mappings = {
+							complete = "<Tab>",
+							run_selection = "<C-CR>",
+							run_input = "<CR>",
+						},
+						overseer = {
+							enabled = true,
+						},
 					},
 				},
 			})
 			require("telescope").load_extension("ui-select")
+			require("telescope").load_extension("cmdline")
 		end,
 	},
 }
