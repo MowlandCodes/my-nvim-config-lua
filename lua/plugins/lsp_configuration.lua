@@ -33,6 +33,7 @@ return {
 					"pyright",
 					"stimulus_ls",
 					"intelephense",
+					"ts_ls",
 				},
 				automatic_installation = true,
 			})
@@ -78,9 +79,6 @@ return {
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.html.setup({
 				filetypes = { "html", "htmldjango", "php", "blade" },
 				capabilities = capabilities,
@@ -107,13 +105,29 @@ return {
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+				init_options = {
+					preferences = {
+						disableSuggestions = true,
+					},
+				},
+				filetypes = {
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+				},
+			})
 			lspconfig.emmet_language_server.setup({
 				capabilities = capabilities,
 				filetypes = {
 					"html",
-					"css",
 					"javascript",
 					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+					"css",
 					"php",
 					"htmldjango",
 					"blade",
@@ -123,19 +137,17 @@ return {
 				capabilities = capabilities,
 				filetypes = {
 					"html",
-					"javascript",
-					"typescript",
 					"php",
 					"blade",
 					"htmldjango",
 				},
 			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-			})
 			lspconfig.asm_lsp.setup({
 				capabilities = capabilities,
 			})
+			-- lspconfig.eslint.setup({
+			-- 	capabilities = capabilities,
+			-- })
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
