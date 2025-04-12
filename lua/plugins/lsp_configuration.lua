@@ -107,11 +107,6 @@ return {
 			})
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
-				init_options = {
-					preferences = {
-						disableSuggestions = true,
-					},
-				},
 				filetypes = {
 					"javascript",
 					"typescript",
