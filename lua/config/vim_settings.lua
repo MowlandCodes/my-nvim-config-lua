@@ -18,3 +18,21 @@ vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkwait700-blinkoff400-blinkon
 
 vim.opt.wrap = true
 vim.g.lazyvim_php_lsp = "intelephense"
+
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = {
+		spacing = 4,
+		prefix = "",
+	},
+	update_in_insert = false,
+	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
+})
