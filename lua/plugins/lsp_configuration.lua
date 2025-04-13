@@ -80,7 +80,7 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
-				filetypes = { "html", "htmldjango", "php", "blade" },
+				filetypes = { "html", "htmldjango", "php", "blade", "ejs" },
 				capabilities = capabilities,
 			})
 			lspconfig.djlsp.setup({
@@ -112,6 +112,7 @@ return {
 					"typescript",
 					"javascriptreact",
 					"typescriptreact",
+					"ejs",
 				},
 			})
 			lspconfig.emmet_language_server.setup({
@@ -126,6 +127,7 @@ return {
 					"php",
 					"htmldjango",
 					"blade",
+					"ejs",
 				},
 			})
 			lspconfig.tailwindcss.setup({

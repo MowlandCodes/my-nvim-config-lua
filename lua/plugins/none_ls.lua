@@ -61,7 +61,7 @@ return {
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.code_actions.textlint,
 				null_ls.builtins.formatting.markdownlint,
-				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.prettier.with({ extra_filetypes = { "ejs" } }),
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.pretty_php,
 				null_ls.builtins.diagnostics.djlint,
