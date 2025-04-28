@@ -142,9 +142,11 @@ return {
 			lspconfig.asm_lsp.setup({
 				capabilities = capabilities,
 			})
-			-- lspconfig.eslint.setup({
-			-- 	capabilities = capabilities,
-			-- })
+			lspconfig.powershell_es.setup({
+				capabilities = capabilities,
+				bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
+				filetypes = "ps1",
+			})
 
 			-- Keymapping for Tooltip Docs
 			vim.keymap.set("n", "<leader>lh", function()
