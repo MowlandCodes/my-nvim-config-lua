@@ -74,6 +74,10 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.clangd.setup({
+				cmd = {
+					"clangd",
+					"--fallback-style=webkit",
+				},
 				capabilities = capabilities,
 			})
 			lspconfig.cssls.setup({
